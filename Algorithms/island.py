@@ -38,14 +38,20 @@ def iterative_search(board):
 
 def recursive_search(board,i,j,sq):
 	board[i][j]='0'
-	#down
+
 	if(i+1<sq):
 		if(board[i+1][j]=='1'):
-			return recursive_search(board,i+1,j,sq)
-	#right
+			recursive_search(board,i+1,j,sq)
 	if(j+1<sq):
 		if(board[i][j+1]=='1'):
-			return recursive_search(board,i,j+1,sq)
+			recursive_search(board,i,j+1,sq)
+	if(i-1<sq):
+		if(board[i-1][j]=='1'):
+			recursive_search(board,i-1,j,sq)
+	if(j-1<sq):
+		if(board[i][j-1]=='1'):
+			recursive_search(board,i,j-1,sq)
+
 	return board
 
 game = '1000001001101011110111111'
