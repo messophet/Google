@@ -45,10 +45,10 @@ def recursive_search(board,i,j,sq):
 	if(j+1<sq):
 		if(board[i][j+1]=='1'):
 			recursive_search(board,i,j+1,sq)
-	if(i-1<sq):
+	if(i-1>=0):
 		if(board[i-1][j]=='1'):
 			recursive_search(board,i-1,j,sq)
-	if(j-1<sq):
+	if(j-1>=0):
 		if(board[i][j-1]=='1'):
 			recursive_search(board,i,j-1,sq)
 
