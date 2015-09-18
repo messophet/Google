@@ -1,5 +1,11 @@
 import math
 
+#solves http://www.careercup.com/question?id=5673390490779648
+#Land is connected by 4-neighbour connections (up down left right)
+#given map N x N, 2-D Array
+#0 - sea
+#1 - land
+
 def setBoard(st):
 	numOfPoints = len(st)
 	n = math.sqrt(numOfPoints) #required to form N lists of N elements
@@ -32,16 +38,19 @@ def iterative_search(board):
 
 def recursive_search(board,i,j,sq):
 	board[i][j]='0'
-
+	#up
 	if(i-1 >= 0):
 		if(board[i-1][j]=='1'):
 			return recursive_search(board,i-1,j,sq)
+	#down
 	if(i+1<sq):
 		if(board[i+1][j]=='1'):
 			return recursive_search(board,i+1,j,sq)
+	#left
 	if(j-1>=0):
 		if(board[i][j-1]=='1'):
 			return recursive_search(board,i,j-1,sq)
+	#right
 	if(j+1<sq):
 		if(board[i][j+1]=='1'):
 			return recursive_search(board,i,j+1,sq)
