@@ -1,5 +1,5 @@
 import math
-
+import random
 #solves http://www.careercup.com/question?id=5673390490779648
 #Land is connected by 4-neighbour connections (up down left right)
 #given map N x N, 2-D Array
@@ -54,10 +54,16 @@ def recursive_search(board,i,j,sq):
 
 	return board
 
-game = '1000001001101011110111111'
+#randomly set a binary string of d length
+d=9
+mx = (2 ** d) - 1
+b = bin(random.randint(0,mx))
+game = b[2:].rjust(d, '0') 
+
 board = setBoard(game)
 
 print('###INPUT###')
+#printing the input, separating each line by N
 n=int(math.sqrt(len(game)))
 splitStr=[game[i:i+n] for i in range(0, len(game), n)]
 for i in splitStr:
