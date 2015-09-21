@@ -1,6 +1,5 @@
 #terribly inefficient solution
-
-#check backward
+#needs some work
 def print_consecutive(items):
 	temp = items[0]
 	outstring = []
