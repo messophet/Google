@@ -1,5 +1,5 @@
 import math
-
+import random
 #solves http://www.careercup.com/question?id=5673390490779648
 #Land is connected by 4-neighbour connections (up down left right)
 #given map N x N, 2-D Array
@@ -38,28 +38,32 @@ def iterative_search(board):
 
 def recursive_search(board,i,j,sq):
 	board[i][j]='0'
-	#up
-	if(i-1 >= 0):
-		if(board[i-1][j]=='1'):
-			return recursive_search(board,i-1,j,sq)
-	#down
+
 	if(i+1<sq):
 		if(board[i+1][j]=='1'):
-			return recursive_search(board,i+1,j,sq)
-	#left
-	if(j-1>=0):
-		if(board[i][j-1]=='1'):
-			return recursive_search(board,i,j-1,sq)
-	#right
+			recursive_search(board,i+1,j,sq)
 	if(j+1<sq):
 		if(board[i][j+1]=='1'):
-			return recursive_search(board,i,j+1,sq)
+			recursive_search(board,i,j+1,sq)
+	if(i-1>=0):
+		if(board[i-1][j]=='1'):
+			recursive_search(board,i-1,j,sq)
+	if(j-1>=0):
+		if(board[i][j-1]=='1'):
+			recursive_search(board,i,j-1,sq)
+
 	return board
 
-game = '1000001001101011110111111'
+#randomly set a binary string of d length
+d=9
+mx = (2 ** d) - 1
+b = bin(random.randint(0,mx))
+game = b[2:].rjust(d, '0') 
+
 board = setBoard(game)
 
 print('###INPUT###')
+#printing the input, separating each line by N
 n=int(math.sqrt(len(game)))
 splitStr=[game[i:i+n] for i in range(0, len(game), n)]
 for i in splitStr:
