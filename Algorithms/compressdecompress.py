@@ -29,7 +29,8 @@ def decompressSimple(st):
 	numList= []
 	for i in range(0,len(st)):
 		if(st[i].isdigit()):
-			for j in range(i,len(st)):
+			numList.append(st[i])
+			for j in range(i+1,len(st)):
 				if(st[j].isdigit()):
 					numList.append(st[j])
 				else:
