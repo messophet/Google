@@ -19,19 +19,27 @@ def simpleCompress(st):
 	else:
 		return st
 
-compress = "aaabbbcccccccd"
+compress = "aaabbbccccccccccd"
 decompress = simpleCompress(compress)
 print('{}'.format(simpleCompress(compress)))
 
 def decompressSimple(st):
 	outstring=[]
 	lastchar=""
-	for char in st:
-		if(char.isdigit()):
-			for i in range(0,int(char)):
+	numList= []
+	for i in range(0,len(st)):
+		if(st[i].isdigit()):
+			for j in range(i,len(st)):
+				if(st[j].isdigit()):
+					numList.append(st[j])
+				else:
+					break
+			num = int(''.join(numList))
+			for j in range(0,num):
 				outstring.append(lastchar)
+			numList = []
 		else:
-			lastchar=char
+			lastchar=st[i]
 	outstring=''.join(outstring)
 	return outstring
 
