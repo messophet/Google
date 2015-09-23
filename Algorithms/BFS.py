@@ -1,4 +1,3 @@
-#Will implement BFS here
 def BFS(q,start):
 	visited, queue = set(), [start]
 	while queue:
