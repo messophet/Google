@@ -1,3 +1,5 @@
+#solves careercup question:http://www.careercup.com/question?id=5093738684612608
+
 def busiestHour(timeList):
 	start = [int(x) for x in timeList[::3]]#get all start times from the list
 	end = [int(x) for x in timeList[1::3]]#get all the end times by selecting every third element following the second element
