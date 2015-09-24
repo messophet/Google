@@ -44,6 +44,14 @@ def findmissing(array):
 	maxTotal = reduce(lambda x, y: x*y, list(range(1,2*len(array))))
 
 	for i in range(2*len(array)-1,0,-1):
+		#take care of division by 1... which will of course return true 
+		#for all numbers besides 0 (unless multArr is 0 also)
+		if(i==1):
+			if(array[0]==1 or array[1]==1):
+				break
+			else:
+				outList.append(1)
+				break
 		if(maxTotal/i >= multArr):#keep dividing by the largest factor
 			outList.append(i)
 			maxTotal = maxTotal/i
@@ -52,7 +60,7 @@ def findmissing(array):
 
 array = [0,2,4]
 array = [1]
-array = [0,2]
+array = [0,1,2,3,4,5,6,7]
 print(findmissing(array))
 
 
