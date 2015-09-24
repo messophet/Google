@@ -58,8 +58,8 @@ def findmissing(array):
 	return outList
 
 
-array = [0,2,4]
-array = [1]
+#array = [0,2,4]
+#array = [1]
 array = [0,1,2,3,4,5,6,7]
 print(findmissing(array))
 
