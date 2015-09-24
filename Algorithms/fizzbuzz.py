@@ -1,5 +1,5 @@
 #FizzBuzz without modulo
-#upperlimit is not inclusive(100 will return from 0 to 99)
+#upperlimit is not inclusive(100 will return from 0 to 99) 
 
 def fizzbuzz(fizz,buzz,iters,upperlimit):
 	if(iters==upperlimit):
