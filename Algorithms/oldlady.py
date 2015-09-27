@@ -48,7 +48,7 @@ def oldLady(simulations,seats):
 		if(oldLadyChooses==seats-1):
 			oneInHisSeat += 1
 		else:
-			emptyArr[oldLadyChooses] = 49
+			emptyArr[oldLadyChooses] = seats-1
 			for i in range(seats-2,-1,-1):
 				if(emptyArr[i]==-1):
 					emptyArr[i]=i
