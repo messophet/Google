@@ -58,8 +58,10 @@ def oldLady(simulations,seats):
 						if(emptyArr[randomSeat]==-1):
 							emptyArr[randomSeat] = i
 							break
+				if(emptyArr[0]!=-1):
+					break
 			if(emptyArr[0]==0):
 				oneInHisSeat+=1
 	return float(oneInHisSeat)/float(simulations)
 
-print(oldLady(1000,50))
+print(oldLady(100000,50))
