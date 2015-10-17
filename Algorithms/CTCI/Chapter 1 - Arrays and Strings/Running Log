@@ -1,0 +1,47 @@
+Running Log
+'''
+How do I implement a hash function in Python?
+-
+How do I create a binary search tree in Python?
+-
+How about a skip list? T his may be useful.
+
+Dynamic Programming
+-Knapsack, TSP
+
+Try 2-3 problems from ProjectEuler I guess.
+
+Graphs, directed, acyclic
+------- object -------
+BFS and DFS on a binary search tree to obtain min/max
+------- two pointers -------
+Heap, implementation and use cases
+------- min max done -------
+Play with dictionaries in Python
+
+Why deque?
+	Deque: generalization of stacks and queues, doubly linked list
+				 more useful for pushing and popping things off the ends
+				O(1) insertion and removal fo elements at the end
+				O(n) insertion and removal in the middle
+				O(1) insertion and removal of elements at the beginning of the sequence
+
+	List: much better for random-access and fixed-length operations, including slicing
+				O(n) for pop(0) and insert(0,v)
+				Lists don't deal with thread safety
+
+Enumarated for loop
+------- done -------
+merge sort
+------- done -------
+heapq - priority queue in Python
+
+heappush(heap,item), heappop(heap), heappushpop(heap,item)
+heapify(list)
+heapreplace(heap,item) -> pop the root element and push a new one
+merge(*iterables) -> merge two inputs into a single sorted one, assumes the other two are already sorted
+nlargest(n,iterable, key=str.lower)
+nsmallest(n,iterable, key=str.upper)
+
+sorted(iterable, key=key, reverse=True)
+'''
